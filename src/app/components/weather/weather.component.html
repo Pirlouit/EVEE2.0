@@ -1,0 +1,36 @@
+<div id="plugin">
+  <div class="flatWeatherPlugin full">
+    <h2>{{weather.city}}</h2>
+    <div class="wiToday">
+      <div class="wiIconGroup">
+        <div class="wi wi{{weather.iconId}}"></div>
+        <p class="wiText">{{weather.description}}</p>
+      </div>
+      <p class="wiTemperature">{{weather.temp}}<sup>°C</sup></p>
+      <div class="wiDetail">
+        <p class="wiDay">{{weather.day}}</p>
+        <ul class="astronomy">
+          <li class="wi sunrise">{{weather.sunrise}}</li>
+          <li class="wi sunset">{{weather.sunset}}</li>
+        </ul>
+        <ul class="temp">
+          <li>Max : {{weather.maxTemp}}<sup>°C</sup></li>
+          <li>Min : {{weather.minTemp}}<sup>°C</sup></li>
+        </ul>
+        <ul class="atmosphere">
+          <li class="wi humidity">{{weather.humidity}}%</li>
+          <li class="wi wind">{{weather.windDirection}} {{weather.windSpeed}} km/h</li>
+        </ul>
+      </div>
+    </div>
+    <ul class="wiForecasts">
+      <li class="wiDay" *ngFor="let item of forecast"><span>{{item.day}}</span>
+        <ul class="wiForecast">
+          <li class="wi wi{{item.iconId}}"></li>
+          <li class="wiMax">{{item.maxTemp}}<sup>°C</sup></li>
+          <li class="wiMin">{{item.minTemp}}<sup>°C</sup></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
